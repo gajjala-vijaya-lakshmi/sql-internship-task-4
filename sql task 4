@@ -1,0 +1,24 @@
+SELECT CategoryID, COUNT(*) AS TotalBooks
+FROM Books
+GROUP BY CategoryID;
+
+SELECT IssueID, SUM(FineAmount) AS TotalFine
+FROM Fines
+GROUP BY IssueID;
+
+SELECT AVG(FineAmount) AS AvgPaidFine
+FROM Fines
+WHERE Paid = TRUE;
+
+SELECT LibrarianID, COUNT(*) AS BooksIssued
+FROM IssuedBooks
+GROUP BY LibrarianID;
+
+SELECT CategoryID, COUNT(*) AS BookCount
+FROM Books
+GROUP BY CategoryID
+HAVING COUNT(*) > 1;
+
+SELECT MIN(PublishedYear) AS Earliest, MAX(PublishedYear) AS Latest
+FROM Books;
+
